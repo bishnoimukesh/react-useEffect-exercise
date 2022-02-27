@@ -12,10 +12,10 @@ export default function WishList() {
 
   const handleWishInput = (event) => setWishText(event.target.value);
 
-  useEffect(()=>{handleWishAdd}, [localStorage.setItem('item', JSON.stringify(wishList.map((item)=>{
-    console.log(item.wish);
+  useEffect(()=>{localStorage.setItem('item', JSON.stringify(wishList.map((item)=>{
+    console.log('Item Added : ',item.wish);
     return item.wish;
-  })))])
+  })))},[wishList])
   return (
     <div>
       <h1>WishList</h1>

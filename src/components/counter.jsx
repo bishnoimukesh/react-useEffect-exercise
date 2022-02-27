@@ -6,8 +6,8 @@ export default function Counter() {
     setCounts(counts + 1);
   };
   useEffect(() => {
-    console.log(counts);
-  });
+    console.log(`Hey! This is the initial value of Counter: ${counts}.`);
+  }, []);
   return (
     <div>
       <p>Number of counts : {counts}</p>
