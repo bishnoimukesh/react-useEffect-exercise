@@ -6,8 +6,10 @@ import './style.css';
 
 export default function App() {
   return(
-    // <Counter />
-    // <PredictOutputOrder />
-    <LocalStorage />
+    <>
+      {/* <Counter /> */}
+      {/* <PredictOutputOrder /> */}
+      <LocalStorage />
+    </>
   )
 }

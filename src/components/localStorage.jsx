@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import uuid from 'react-uuid';
 
-function WishList() {
+export default function WishList() {
   const [wishText, setWishText] = useState('');
   const [wishList, setWishList] = useState([]);
 
@@ -12,8 +12,13 @@ function WishList() {
 
   const handleWishInput = (event) => setWishText(event.target.value);
 
+  useEffect(()=>{handleWishAdd}, [localStorage.setItem('item', JSON.stringify(wishList.map((item)=>{
+    console.log(item.wish);
+    return item.wish;
+  })))])
   return (
     <div>
+      <h1>WishList</h1>
       <input
         onChange={handleWishInput}
         value={wishText}
@@ -25,17 +30,6 @@ function WishList() {
           <li key={id}> {wish} </li>
         ))}
       </ul>
-    </div>
-  );
-}
-
-export default function App() {
-  return (
-    <div>
-      <h1>WishList</h1>
-      <div>
-        <WishList />
-      </div>
     </div>
   );
 }

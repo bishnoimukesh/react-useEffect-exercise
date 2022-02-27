@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-export default function App() {
+export default function Counter() {
   const [counts, setCounts] = useState(0);
   const clickHandler = () => {
     setCounts(counts + 1);
